@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class SettingObserver : MonoBehaviour
 {
-    public Observer Observer;
+    public GameObject observer;
     const int Width = 10;
-    const int Height = 24;
+    const int Height = 21;
     Observer[,] Observers = new Observer[Height, Width];
-    bool temp = false;
-
 
     void Start()
     {
-        for (int i = 0; i < 21; i++)
+        for (int i = 0; i < Height; i++)
         {
-            for (int j = 0; j < 10; j++)
+            for (int j = 0; j < Width; j++)
             {
-                Observers[i, j] = Observer;
+                Observers[i, j] = observer.GetComponent<Observer>();
                 Instantiate(Observers[i, j]);
                 Observers[i, j].transform.position = new Vector3(-2.0942f + (0.465f * j), -4.285f + (0.465f * i), 0.0f);
             }
@@ -27,13 +25,15 @@ public class SettingObserver : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < 24; i++)
+        for (int i = 0; i < Height; i++)
         {
             int check = 0;
-            for (int j = 0; j < 10; j++)
+            for (int j = 0; j < Width; j++)
             {
                 if (Observers[i, j].IsOverrlaped)
+                {
                     check++;
+                }
             }
 
             if(check == Width) // Width is const 10

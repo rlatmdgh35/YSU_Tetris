@@ -9,6 +9,7 @@ public class Observer : MonoBehaviour
     void OnCollisionEnter2D(Collision2D inColl)
     {
         IsOverrlaped = true;
+        Debug.Log("Overrlapped");
     }
 
     void OnCollisionExit2D(Collision2D inColl)
