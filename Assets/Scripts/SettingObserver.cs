@@ -13,13 +13,13 @@ public class SettingObserver : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < 24; i++)
+        for (int i = 0; i < 21; i++)
         {
             for (int j = 0; j < 10; j++)
             {
                 Observers[i, j] = Observer;
                 Instantiate(Observers[i, j]);
-                Observers[i, j].transform.position = new Vector3(-2.2025f + (0.4f * j), -4.4f + (0.4f * i), 0.0f);
+                Observers[i, j].transform.position = new Vector3(-2.0942f + (0.465f * j), -4.285f + (0.465f * i), 0.0f);
             }
         }   
     }

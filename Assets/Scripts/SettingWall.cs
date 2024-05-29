@@ -12,7 +12,7 @@ public class SettingWall : MonoBehaviour
         for (int i = 0; i < 22; i++)
         {
             Instantiate(Wall);
-            Wall.transform.position = new Vector3(-2.5562f, -4.75f + (0.465f * i), 1.0f);
+            Wall.transform.position = new Vector3(-2.5592f, -4.75f + (0.465f * i), 1.0f);
         }
 
         // Buttom
@@ -26,7 +26,7 @@ public class SettingWall : MonoBehaviour
         for (int i = 0; i < 22; i++)
         {
             Instantiate(Wall);
-            Wall.transform.position = new Vector3(2.5562f, -4.75f + (0.465f * i), 1.0f);
+            Wall.transform.position = new Vector3(2.5592f, -4.75f + (0.465f * i), 1.0f);
 
         }
     }
