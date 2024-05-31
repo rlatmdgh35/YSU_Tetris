@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SettingObserver : MonoBehaviour
 {
+    Observer[,] Observers = new Observer[Height, Width];
     public GameObject observer;
     const int Width = 10;
     const int Height = 21;
-    Observer[,] Observers = new Observer[Height, Width];
 
     void Start()
     {
@@ -38,7 +38,7 @@ public class SettingObserver : MonoBehaviour
 
             if(check == Width) // Width is const 10
             {
-                // ±× ÁÙÀ» ¾ø¾Ö°í ¸ğµç ºí·°µéÀ» ÇÑÄ­¾¿ ³»¸®±â
+                // ê·¸ ì¤„ì„ ì—†ì• ê³  ëª¨ë“  ë¸”ëŸ­ë“¤ì„ í•œì¹¸ì”© ë‚´ë¦¬ê¸°
             }
         }
     }
