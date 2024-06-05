@@ -5,6 +5,98 @@ using UnityEngine;
 public class Blocks : MonoBehaviour
 {
     public GameObject[] blocks = new GameObject[7];
+    GameObject[] piece = new GameObject[4];
+    public GameObject block;
+    public GameObject count;
+
+    int otherCount = 0;
+
+    Vector2[] pieceLoc = new Vector2[28] {
+        new Vector2(-0.9f, 0f),
+        new Vector2(-0f, 0f),
+        new Vector2(0.9f, 0f),
+        new Vector2(1.8f, 0f),
+        new Vector2(0f, 0.9f),
+        new Vector2(0.9f, 0f),
+        new Vector2(1.8f, 0f),
+        new Vector2(0.9f, 0f),
+        new Vector2(0f, 0.9f),
+        new Vector2(0.9f, 0.9f),
+        new Vector2(0.9f, 0f),
+        new Vector2(1.8f, 0f),
+        new Vector2(1.8f, 0.9f),
+        new Vector2(0.9f, 0f),
+        new Vector2(0.9f, 0.9f),
+        new Vector2(1.8f, 0.9f),
+        new Vector2(0.9f, 0f),
+        new Vector2(0.9f, 0.9f),
+        new Vector2(1.8f, 0f),
+        new Vector2(0f, 0f),
+        new Vector2(0f, 0f),
+        new Vector2(0f, 0f),
+        new Vector2(0f, 0f),
+        new Vector2(0f, 0f),
+        new Vector2(0f, 0f),
+        new Vector2(0f, 0f),
+        new Vector2(0f, 0f),
+        new Vector2(0f, 0f)
+    };
+
+    uint blockIndex = 0;
+
+    void Log(object input)
+    {
+        Debug.Log(input);
+    }
+
+    void Start()
+    {
+        /*
+        blockIndex = (uint)Random.Range(0, blocks.Length - 1);
+
+        for (int i = 0; i < blocks.Length; i++)
+        {
+            if (blockIndex == i)
+            {
+                for (int j = 0; j < piece.Length; j++) // piece.Length -> 4
+                {
+                    piece[j] = blocks[blockIndex];
+
+                    piece[j].transform.position = pieceLoc[i * piece.Length + j];
+                }
+            }
+        }
+        */
+
+
+        
+
+    }
+
+    void Update()
+    {
+        if (otherCount == 3)
+            return;
+
+        Debug.Log(otherCount);
+
+        count = Instantiate(count, block.transform);
+        count.name = otherCount.ToString();
+        otherCount++;
+        for (int i = 0; i < 4; i++)
+        {
+            piece[i] = Instantiate(blocks[blockIndex], count.transform);
+            piece[i].transform.position = pieceLoc[i];
+        }
+    }
+
+
+}
+
+
+/*
+{
+    public GameObject[] blocks = new GameObject[7];
     GameObject CurrentBlock;
     int CurrnetIndex;
     
@@ -122,3 +214,4 @@ public class Blocks : MonoBehaviour
             CurrentBlock.transform.position = new Vector2(-0.2342f, 4.3175f);
     }
 }
+*/

@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class SettingWall : MonoBehaviour
 {
-    public GameObject Wall;
+    public GameObject wall;
 
     void Start()
     {
         // LeftSide
         for (int i = 0; i < 22; i++)
         {
-            Instantiate(Wall);
-            Wall.transform.position = new Vector3(-2.5592f, -4.75f + (0.465f * i), 1.0f);
+            Instantiate(wall, gameObject.transform);
+            wall.transform.position = new Vector3(-4.95f, -9.15f + (0.9f * i), 0f);
         }
 
         // Buttom
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++) // Instantiate 10 blocks
         {
-            Instantiate(Wall);
-            Wall.transform.position = new Vector3(-2.0942f + (0.465f * i), -4.75f, 1.0f);
+            Instantiate(wall, gameObject.transform);
+            wall.transform.position = new Vector3(-4.05f + (0.9f * i), -9.15f, 0f);
         }
 
         // RightSide
         for (int i = 0; i < 22; i++)
         {
-            Instantiate(Wall);
-            Wall.transform.position = new Vector3(2.5592f, -4.75f + (0.465f * i), 1.0f);
+            Instantiate(wall, gameObject.transform);
+            wall.transform.position = new Vector3(4.95f, -9.15f + (0.9f * i), 0f);
 
         }
     }
